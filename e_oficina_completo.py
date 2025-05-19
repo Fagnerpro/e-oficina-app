@@ -1,11 +1,9 @@
-
 import streamlit as st
 import sqlite3
 from fpdf import FPDF
 import os
 from datetime import datetime
 
-# Configuração da página
 st.set_page_config(page_title="E-OFICINA - Diagnóstico e Orçamento", page_icon="favicon.ico", layout="centered")
 
 # Banco de dados SQLite local
@@ -28,7 +26,6 @@ CREATE TABLE IF NOT EXISTS atendimentos (
 """)
 conn.commit()
 
-# Base de marcas e modelos
 modelos_por_marca = {
     "BYD": ["Dolphin", "Yuan Plus", "Song Plus", "Tan EV", "Seal"],
     "Volvo": ["XC40 Recharge", "C40 Recharge"],
@@ -46,8 +43,9 @@ modelos_por_marca = {
     "Tesla": ["Model 3", "Model Y"]
 }
 
-# Interface do usuário
-st.image("logo_resized.png", width=250)
+# Imagem do logo (opcional)
+if os.path.exists("logo_resized.png"):
+    st.image("logo_resized.png", width=250)
 st.title("🔧 E-OFICINA")
 st.subheader("Módulo 1: Diagnóstico Assistido e Orçamento Inteligente")
 
@@ -70,12 +68,10 @@ with st.form("formulario_oficina"):
 
     enviar = st.form_submit_button("Gerar Orçamento e Salvar")
 
-# Diagnóstico automático simulado
 diagnostico = ""
 if sintomas:
     diagnostico = "Falha no inversor de potência. Verificar módulo eletrônico e cabos de alimentação."
 
-# Função para gerar PDF
 def gerar_pdf(dados):
     pdf = FPDF()
     pdf.add_page()
@@ -89,7 +85,6 @@ def gerar_pdf(dados):
     pdf.output(nome_arquivo)
     return nome_arquivo
 
-# Processamento ao enviar
 if 'enviar' in locals() and enviar:
     if cliente and telefone and modelo and sintomas:
         data = datetime.now().strftime("%Y-%m-%d %H:%M")
