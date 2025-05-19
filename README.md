@@ -1,4 +1,4 @@
- E-OFICINA - Módulo 1: Diagnóstico Assistido e Orçamento Inteligente
+# E-OFICINA - Módulo 1: Diagnóstico Assistido e Orçamento Inteligente
 
 Este é o primeiro módulo da plataforma **E-OFICINA**, focado em oficinas que realizam atendimento a veículos elétricos. O módulo permite:
 
@@ -28,3 +28,7 @@ Para publicar no Streamlit Cloud:
 2. Acesse: [https://streamlit.io/cloud](https://streamlit.io/cloud)
 3. Conecte seu GitHub e selecione o repositório.
 4. Escolha `e_oficina_completo.py` como arquivo principal e clique em "Deploy".
+
+---
+
+Desenvolvido por **USINA I.A.**
