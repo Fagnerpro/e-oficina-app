@@ -1,0 +1,16 @@
+
+[server]
+headless = true
+enableCORS = false
+port = 8501
+
+[theme]
+primaryColor = "#1f4fff"
+backgroundColor = "#f9f9f9"
+secondaryBackgroundColor = "#e0e0e0"
+textColor = "#000000"
+font = "sans serif"
+
+[ui]
+page_title = "E-OFICINA"
+page_icon = "favicon.ico"
